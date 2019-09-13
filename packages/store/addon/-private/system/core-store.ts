@@ -915,7 +915,7 @@ abstract class CoreStore extends Service {
     ### Retrieving Related Model Records
 
     If you use an adapter such as Ember's default
-    [`JSONAPIAdapter`](https://emberjs.com/api/data/classes/DS.JSONAPIAdapter.html)
+    [`JSONAPIAdapter`](https://emberjs.com/api/data/classes/JSONAPIAdapter.html)
     that supports the [JSON API specification](http://jsonapi.org/) and if your server
     endpoint supports the use of an
     ['include' query parameter](http://jsonapi.org/format/#fetching-includes),
@@ -1841,7 +1841,7 @@ abstract class CoreStore extends Service {
     ```
 
     This method returns a promise, which is resolved with an
-    [`AdapterPopulatedRecordArray`](https://emberjs.com/api/data/classes/DS.AdapterPopulatedRecordArray.html)
+    [`AdapterPopulatedRecordArray`](https://emberjs.com/api/data/classes/AdapterPopulatedRecordArray.html)
     once the server returns.
 
     @since 1.13.0
@@ -2016,7 +2016,7 @@ abstract class CoreStore extends Service {
     return promiseObject(
       _queryRecord(adapter, this, normalizedModelName, query, adapterOptionsWrapper).then(internalModel => {
         // the promise returned by store.queryRecord is expected to resolve with
-        // an instance of DS.Model
+        // an instance of Model
         if (internalModel) {
           return internalModel.getRecord();
         }
@@ -2169,7 +2169,7 @@ abstract class CoreStore extends Service {
     ### Retrieving Related Model Records
 
     If you use an adapter such as Ember's default
-    [`JSONAPIAdapter`](https://emberjs.com/api/data/classes/DS.JSONAPIAdapter.html)
+    [`JSONAPIAdapter`](https://emberjs.com/api/data/classes/JSONAPIAdapter.html)
     that supports the [JSON API specification](http://jsonapi.org/) and if your server
     endpoint supports the use of an
     ['include' query parameter](http://jsonapi.org/format/#fetching-includes),
@@ -2689,7 +2689,7 @@ abstract class CoreStore extends Service {
     There are some typical properties for `JSONAPI` payload:
     * `id` - mandatory, unique record's key
     * `type` - mandatory string which matches `model`'s dasherized name in singular form
-    * `attributes` - object which holds data for record attributes - `DS.attr`'s declared in model
+    * `attributes` - object which holds data for record attributes - `attr`'s declared in model
     * `relationships` - object which must contain any of the following properties under each relationships' respective key (example path is `relationships.achievements.data`):
       - [`links`](http://jsonapi.org/format/#document-links)
       - [`data`](http://jsonapi.org/format/#document-resource-object-linkage) - place for primary data

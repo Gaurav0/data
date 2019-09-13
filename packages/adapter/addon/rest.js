@@ -458,7 +458,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     key. Arbitrary headers can be set as key/value pairs on the
     `RESTAdapter`'s `headers` object and Ember Data will send them
     along with each ajax request. For dynamic headers see [headers
-    customization](/api/data/classes/DS.RESTAdapter.html).
+    customization](/api/data/classes/RESTAdapter.html).
 
     ```app/adapters/application.js
     import RESTAdapter from '@ember-data/adapter/rest';
@@ -490,9 +490,9 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     @since 1.13.0
     @method findRecord
     @param {Store} store
-    @param {DS.Model} type
+    @param {Model} type
     @param {String} id
-    @param {DS.Snapshot} snapshot
+    @param {Snapshot} snapshot
     @return {Promise} promise
   */
   findRecord(store, type, id, snapshot) {
@@ -511,9 +511,9 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
 
     @method findAll
     @param {Store} store
-    @param {DS.Model} type
+    @param {Model} type
     @param {undefined} neverSet a value is never provided to this argument
-    @param {DS.SnapshotRecordArray} snapshotRecordArray
+    @param {SnapshotRecordArray} snapshotRecordArray
     @return {Promise} promise
   */
   findAll(store, type, sinceToken, snapshotRecordArray) {
@@ -540,7 +540,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
 
     @method query
     @param {Store} store
-    @param {DS.Model} type
+    @param {Model} type
     @param {Object} query
     @return {Promise} promise
   */
@@ -568,7 +568,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     @since 1.13.0
     @method queryRecord
     @param {Store} store
-    @param {DS.Model} type
+    @param {Model} type
     @param {Object} query
     @return {Promise} promise
   */
@@ -610,7 +610,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
 
     @method findMany
     @param {Store} store
-    @param {DS.Model} type
+    @param {Model} type
     @param {Array} ids
     @param {Array} snapshots
     @return {Promise} promise
@@ -651,7 +651,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
 
     @method findHasMany
     @param {Store} store
-    @param {DS.Snapshot} snapshot
+    @param {Snapshot} snapshot
     @param {String} url
     @param {Object} relationship meta object describing the relationship
     @return {Promise} promise
@@ -696,7 +696,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
 
     @method findBelongsTo
     @param {Store} store
-    @param {DS.Snapshot} snapshot
+    @param {Snapshot} snapshot
     @param {String} url
     @param {Object} relationship meta object describing the relationship
     @return {Promise} promise
@@ -721,8 +721,8 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
 
     @method createRecord
     @param {Store} store
-    @param {DS.Model} type
-    @param {DS.Snapshot} snapshot
+    @param {Model} type
+    @param {Snapshot} snapshot
     @return {Promise} promise
   */
   createRecord(store, type, snapshot) {
@@ -745,8 +745,8 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
 
     @method updateRecord
     @param {Store} store
-    @param {DS.Model} type
-    @param {DS.Snapshot} snapshot
+    @param {Model} type
+    @param {Snapshot} snapshot
     @return {Promise} promise
   */
   updateRecord(store, type, snapshot) {
@@ -765,8 +765,8 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
 
     @method deleteRecord
     @param {Store} store
-    @param {DS.Model} type
-    @param {DS.Snapshot} snapshot
+    @param {Model} type
+    @param {Snapshot} snapshot
     @return {Promise} promise
   */
   deleteRecord(store, type, snapshot) {
@@ -894,7 +894,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     @param  {Object} headers
     @param  {Object} payload
     @param  {Object} requestData - the original request information
-    @return {Object | DS.AdapterError} response
+    @return {Object | AdapterError} response
   */
   handleResponse(status, headers, payload, requestData) {
     if (this.isSuccess(status, headers, payload)) {
@@ -1345,7 +1345,7 @@ function headersToObject(headers) {
 /**
  * Helper function that translates the options passed to `jQuery.ajax` into a format that `fetch` expects.
  * @param {Object} _options
- * @param {DS.Adapter} adapter
+ * @param {Adapter} adapter
  * @returns {Object}
  */
 export function fetchOptions(options, adapter) {
