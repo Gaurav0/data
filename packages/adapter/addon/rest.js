@@ -489,7 +489,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
 
     @since 1.13.0
     @method findRecord
-    @param {DS.Store} store
+    @param {Store} store
     @param {DS.Model} type
     @param {String} id
     @param {DS.Snapshot} snapshot
@@ -510,7 +510,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     promise for the resulting payload.
 
     @method findAll
-    @param {DS.Store} store
+    @param {Store} store
     @param {DS.Model} type
     @param {undefined} neverSet a value is never provided to this argument
     @param {DS.SnapshotRecordArray} snapshotRecordArray
@@ -539,7 +539,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     to the server as parameters.
 
     @method query
-    @param {DS.Store} store
+    @param {Store} store
     @param {DS.Model} type
     @param {Object} query
     @return {Promise} promise
@@ -567,7 +567,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
 
     @since 1.13.0
     @method queryRecord
-    @param {DS.Store} store
+    @param {Store} store
     @param {DS.Model} type
     @param {Object} query
     @return {Promise} promise
@@ -609,7 +609,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     promise for the resulting payload.
 
     @method findMany
-    @param {DS.Store} store
+    @param {Store} store
     @param {DS.Model} type
     @param {Array} ids
     @param {Array} snapshots
@@ -650,7 +650,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     * Links with no beginning `/` will have a parentURL prepended to it, via the current adapter's `buildURL`.
 
     @method findHasMany
-    @param {DS.Store} store
+    @param {Store} store
     @param {DS.Snapshot} snapshot
     @param {String} url
     @param {Object} relationship meta object describing the relationship
@@ -695,7 +695,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     * Links with no beginning `/` will have a parentURL prepended to it, via the current adapter's `buildURL`.
 
     @method findBelongsTo
-    @param {DS.Store} store
+    @param {Store} store
     @param {DS.Snapshot} snapshot
     @param {String} url
     @param {Object} relationship meta object describing the relationship
@@ -720,7 +720,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     of a record.
 
     @method createRecord
-    @param {DS.Store} store
+    @param {Store} store
     @param {DS.Model} type
     @param {DS.Snapshot} snapshot
     @return {Promise} promise
@@ -744,7 +744,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     of a record.
 
     @method updateRecord
-    @param {DS.Store} store
+    @param {Store} store
     @param {DS.Model} type
     @param {DS.Snapshot} snapshot
     @return {Promise} promise
@@ -764,7 +764,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     The `deleteRecord` method  makes an Ajax (HTTP DELETE) request to a URL computed by `buildURL`.
 
     @method deleteRecord
-    @param {DS.Store} store
+    @param {Store} store
     @param {DS.Model} type
     @param {DS.Snapshot} snapshot
     @return {Promise} promise
@@ -816,7 +816,7 @@ const RESTAdapter = Adapter.extend(BuildURLMixin, {
     and `/posts/2/comments/3`
 
     @method groupRecordsForFindMany
-    @param {DS.Store} store
+    @param {Store} store
     @param {Array} snapshots
     @return {Array}  an array of arrays of records, each of which is to be
                       loaded separately by `findMany`.
